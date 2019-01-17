@@ -41,7 +41,7 @@ pairwise_distances_test = function() ##{{{
 
 optimal_transport_test = function() ## {{{
 {
-	## Construction de deux gaussiennes
+	## Two Gaussians
 	size = 10000
 	X = matrix( nrow = 1 , ncol = size )
 	Y = matrix( nrow = 1 , ncol = size )
@@ -50,14 +50,14 @@ optimal_transport_test = function() ## {{{
 	Y[1,] = rnorm( size , mean = 10 )
 	
 	
-	## Construction de leurs histogrammes
+	## Histograms
 	bin_width = c( 0.1 )
 	muX = ARyga::SparseHist( X , bin_width )
 	muY = ARyga::SparseHist( Y , bin_width )
-	plot( muX$c() , muX$p() ) ## centre des bins trouvés en fonctions de la masse
+	plot( muX$c() , muX$p() ) ## Bins centers
 	
 	
-	## Transport optimal
+	## Optimal Transport
 	otPlan = ARyga::TrPlan( muX , muY )
 	print(otPlan$cost())
 	print(otPlan$plan())
