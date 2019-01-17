@@ -1,0 +1,16 @@
+Package: ARyga
+Type: Package
+Title: Dynamical System, Bias Correction
+Version: 0.4.1
+Date: 2018-12-05
+Authors@R: person("Yoann", "Robin", email = "yoann.robin.k@gmail.com", role = c("aut", "cre"))
+Description: This library makes it possible to study dynamic systems and to statistically
+	correct uni / multivariate data by applying optimal transport to sparse histograms.                                                         
+Depends: R (>= 3.3.3)
+License: CeCILL-C
+Encoding: UTF-8
+LazyData: true
+NeedsCompilation: yes
+LinkingTo: Rcpp
+Imports: Rcpp, methods, R6, deSolve
+RoxygenNote: 6.1.1
