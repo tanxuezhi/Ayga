@@ -114,7 +114,13 @@ def _theta_sueveges_fit( iThreshold , q ):
 
 def _theta_ferro_fit( iThreshold ):
 	Ti = iThreshold[1:] - iThreshold[:-1]
-	return 2 * ( np.sum(Ti - 1)**2 ) / ( Ti.size * np.sum( (Ti-1) * (Ti-2) ) )
+	res = None
+	if np.max(Ti) > 2:
+		res = 2 * ( np.sum(Ti - 1)**2 ) / ( (Ti.size-1) * np.sum( (Ti-1) * (Ti-2) ) )
+	else:
+		res = 2 * ( np.sum(Ti)**2 ) / ( (Ti.size-1) * np.sum( Ti**2 ) )
+	res = min( 1 , res )
+	return res
 
 def _theta_fit( iThreshold , q , theta_fit ):
 	if theta_fit == "sueveges":

@@ -248,7 +248,17 @@ localDimension = function( X , Y = NULL , q = 0.98 , distXY = NULL , gpd_fit = N
 		iThreshold = which( Z[-1] > Z[1] )
 		l = length(iThreshold)
 		Ti = base::diff(iThreshold)
-		return( 2 * ( base::sum(Ti - 1)^2 ) / ( (l-1) * base::sum( (Ti-1) * (Ti-2) ) ) )
+		res = 2
+		if( base::max(Ti) > 2 )
+		{
+			res = 2 * ( base::sum(Ti - 1)^2 ) / ( (l-1) * base::sum( (Ti-1) * (Ti-2) ) )
+		}
+		else
+		{
+			res = 2 * base::sum(Ti)^2 / ( (l-1) * base::sum( Ti^2 ) )
+		}
+		res = base::min( 1 , res )
+		return( res )
 	}
 	
 	## Fit function for local dim
