@@ -13,6 +13,9 @@ contains algorithms for generate Lorenz (or other) attractors and compute local 
 
 ## References
 
+- [1] Robin, Y., Yiou, P., Naveau, P.: Detecting changes in forced climate attractors with Wasserstein distance, Nonlinear Processes in Geophysics 24.3, p. 393–405, 2017, https://www.nonlin-processes-geophys.net/24/393/2017/
+- [2] Robin, Y., Vrac, M., Naveau, P., Yiou, P.: Multivariate stochastic bias corrections with optimal transport, Hydrol. Earth Syst. Sci., 23, 773–786, 2019, https://doi.org/10.5194/hess-23-773-2019
+
 ## Licence
 
 Copyright Yoann Robin, 2018
